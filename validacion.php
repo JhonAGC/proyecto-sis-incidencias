@@ -17,7 +17,7 @@ if(!empty($_POST['registro'])){
         $tipo_usuario = $_POST['tipo_usuario'];
         
         $password = $_POST['password'];
-        $contraseña = sha1($password);
+        $contraseña = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO users(usuario,nombre,password,tipo_usuario) VALUE ('$usuario','$nombre','$contraseña','$tipo_usuario')";
         $resultado = mysqli_query($mysqli,$query);
         
@@ -55,7 +55,7 @@ if(!empty($_POST['registro'])){
         $tipo_users = $_POST['tipo_usuario'];
 
         $password = $_POST['contraseña'];
-        $contraseña = sha1($password);
+        $contraseña = password_hash($password, PASSWORD_DEFAULT);
 
         // sql
         $querys = "UPDATE users set usuario='$users',nombre='$name',password='$contraseña', tipo_usuario='$tipo_users' WHERE id='$cod'";

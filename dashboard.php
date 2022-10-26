@@ -14,7 +14,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
@@ -57,13 +57,26 @@
 
             <!-- foto de perfil -->
             <div class="ft_perfil">
-              <img src="img/upsjb.png" alt="" class="foto_perfil">
+              <div class="content_foto"><img src="img/images_perfil.png" alt="" class="foto_perfil"></div>
+              
+              <div class="perfil-nombre"> <h4 class="ft_nombre">
+
+
+                <?php 
+                $cod=$_SESSION['id'];
+                $sqlquery="SELECT * FROM users WHERE id=$cod";
+                $res=mysqli_query($mysqli,$sqlquery);
+                $pre= mysqli_fetch_assoc($res);
+                echo $pre['nombre'];
+                ?>
+              </h4>
+              </div>
             </div>
 
-            <div class="sb-sidenav-menu-heading">Configuración</div>
+            <div class="sb-sidenav-menu-heading">Administrar</div>
             <a class="nav-link" href="index.html">
               <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-              GESTION DE INCIDENCIAS
+              Nueva incidencia
             </a>
 
 
@@ -74,7 +87,7 @@
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts"
               aria-expanded="false" aria-controls="collapseLayouts">
               <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-              ADMINISTRAR USUARIOS
+               USUARIOS
               <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
             </a>
             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
@@ -104,40 +117,43 @@
                     <a class="nav-link" href="password.html">Forgot Password</a>
                   </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError"
-                  aria-expanded="false" aria-controls="pagesCollapseError">
-                  Error
-                  <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                </a>
-                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
-                  data-parent="#sidenavAccordionPages">
-                  <nav class="sb-sidenav-menu-nested nav">
-                    <a class="nav-link" href="401.html">401 Page</a>
-                    <a class="nav-link" href="404.html">404 Page</a>
-                    <a class="nav-link" href="500.html">500 Page</a>
-                  </nav>
-                </div>
+
               </nav>
             </div>
 
             <?php } ?> <!-- administrador -->
 
+<!-- GESTION DE CLIENTES-->
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError"
+              aria-expanded="false" aria-controls="pagesCollapseError">
+              <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                  CLIENTES
+              <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+            </a>
+            <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+              data-parent="#sidenavAccordionPages">
+              <nav class="sb-sidenav-menu-nested nav">
+                  <a class="nav-link" href="401.html">Lista de clientes</a>
+                  <a class="nav-link" href="404.html">Administrar clientes</a>
+                  
+              </nav>
+            </div>
+<!--FIN  GESTION DE CLIENTES -->
 
-            
             <div class="sb-sidenav-menu-heading">Addons</div>
             <a class="nav-link" href="charts.html">
               <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-              Charts
+              Areas
             </a>
             <a class="nav-link" href="tablas.php">
               <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-              Tablas
+              Categorias
             </a>
           </div>
         </div>
         <div class="sb-sidenav-footer">
-          <div class="small">Logged in as:</div>
-          Start Bootstrap
+          <div class="small">ICA – PERÚ 🌍</div>
+          Frutos de la tierra del sol
         </div>
       </nav>
     </div>

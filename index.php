@@ -13,15 +13,16 @@
 
     $resultado = $mysqli->query($sql);
     $num = $resultado->num_rows;
-
+    
     if ($num > 0) {
       
       $row = $resultado->fetch_assoc();
       $password_bd = $row['password'];
-
-      $pass_c = sha1($password);
       
-      if ($password_bd == $pass_c) {
+      $coincidencia = password_verify($password, $password_bd);
+
+      
+      if ($coincidencia) {
         
         $_SESSION['id'] = $row['id'];
         $_SESSION['nombre'] = $row['nombre'];
