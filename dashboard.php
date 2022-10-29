@@ -72,6 +72,7 @@
               </h4>
               </div>
             </div>
+            <!-- fin foto de perfil -->
 
             <div class="sb-sidenav-menu-heading">Administrar</div>
             <a class="nav-link" href="index.html">
@@ -121,7 +122,7 @@
               </nav>
             </div>
 
-            <?php } ?> <!-- administrador -->
+            <?php } ?> <!-- fin administrador -->
 
 <!-- GESTION DE CLIENTES-->
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError"
@@ -152,8 +153,9 @@
           </div>
         </div>
         <div class="sb-sidenav-footer">
-          <div class="small">ICA – PERÚ 🌍</div>
           Frutos de la tierra del sol
+          <div class="small">ICA – PERÚ 🌍</div>
+          
         </div>
       </nav>
     </div>

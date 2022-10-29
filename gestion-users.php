@@ -34,7 +34,7 @@ require 'vistas/header.php';
 <!--    tabla  usuarios-->
 
 <div class="card mb-4">
-<?php require 'validacion.php'; ?>
+
             <div class="card-header">
               <i class="fas fa-table mr-1"></i>
               USUARIOS

@@ -4,7 +4,8 @@ include 'conexion.php';
 
 if(!empty($_POST['registro'])){
     if(empty($_POST['usuario']) or empty($_POST['nombre']) or empty($_POST['tipo_usuario']) or empty($_POST['password'])){
-        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+      header("location:users.php");  
+      echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error: </strong> Rellenar los campos del formulario.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -24,7 +25,7 @@ if(!empty($_POST['registro'])){
         header('ocation: users.php');
 
         if(isset($resultado)){
-            
+          header("location:users.php");
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Guardado: </strong> Se guardo correctamente.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -40,13 +41,14 @@ if(!empty($_POST['registro'])){
     }
 }else if(!empty($_POST['actualizar'])){
     if(empty($_POST['usuario']) or empty($_POST['nombre'])or empty($_POST['contraseña']) or empty($_POST['tipo_usuario'])){
-        
+      header("location: gestion-users.php"); 
         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error: </strong> Rellenar los campos del formulario.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>';
+      
     }else{
         //variables
         $cod = $_POST['id'];
@@ -55,7 +57,7 @@ if(!empty($_POST['registro'])){
         $tipo_users = $_POST['tipo_usuario'];
 
         $password = $_POST['contraseña'];
-        $contraseña = password_hash($password, PASSWORD_DEFAULT);
+        $contraseña = password_hash($password, PASSWORD_DEFAULT)."\n";
 
         // sql
         $querys = "UPDATE users set usuario='$users',nombre='$name',password='$contraseña', tipo_usuario='$tipo_users' WHERE id='$cod'";
@@ -63,6 +65,7 @@ if(!empty($_POST['registro'])){
         $resultados = mysqli_query($mysqli,$querys);
         
         if(isset($resultados)){
+          header("location: gestion-users.php");
             echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>GUARDADO</strong> Se guardo correctamente.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

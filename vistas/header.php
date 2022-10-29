@@ -46,15 +46,24 @@
           <div class="nav">
 
             <!-- foto de perfil -->
+          
             <div class="ft_perfil">
-              <img src="img/upsjb.png" alt="" class="foto_perfil">
-            </div>
+              <div class="content_foto"><img src="img/images_perfil.png" alt="" class="foto_perfil"></div>
+              
+              <div class="perfil-nombre"> <h4 class="ft_nombre">
 
-            <div class="sb-sidenav-menu-heading">Configuración</div>
-            <a class="nav-link" href="index.html">
-              <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-              GESTION DE INCIDENCIAS
-            </a>
+
+                <?php 
+                $cod=$_SESSION['id'];
+                $sqlquery="SELECT * FROM users WHERE id=$cod";
+                $res=mysqli_query($mysqli,$sqlquery);
+                $pre= mysqli_fetch_assoc($res);
+                echo $pre['nombre'];
+                ?>
+              </h4>
+              </div>
+            </div>
+            <!-- fin foto de perfil -->
 
 
             <!-- visible solo para el administrador -->

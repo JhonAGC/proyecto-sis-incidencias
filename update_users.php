@@ -13,7 +13,7 @@
 
                  
 
-                  <form action="" method="POST">
+                  <form action="validacion.php" method="POST">
                   
 
                         <input type="hidden" class="form-control"  name="id" value="<?php echo $fila['id']?>" >
@@ -41,7 +41,7 @@
 
                       <div class="form-group">
                         <label  class="col-form-label">CONTRASEÑA:</label>
-                        <input type="text" class="form-control" id="contraseña" name="contraseña" value="<?php echo $fila['password']?>">
+                        <input type="password" class="form-control" id="contraseña" name="contraseña" value="<?php echo $fila['password']?>">
                       </div>
 
                       <div class="modal-footer">

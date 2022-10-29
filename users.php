@@ -44,8 +44,8 @@ require 'vistas/header.php';
                 <div class="card-body">
                   
 
-                  <form method="POST" action="" class="form">
-                    <?php require 'validacion.php'; ?>
+                  <form method="POST" action="validacion.php" class="form">
+                  
                     <div class="form-group">
                       <label class="small mb-1" for="inputEmailAddress">Usuario</label>
                       <input class="form-control py-3"  type="text" name="usuario"
