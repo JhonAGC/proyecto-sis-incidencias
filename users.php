@@ -72,8 +72,8 @@ require 'vistas/header.php';
                         placeholder="Ingrese la contraseña" />
                     </div>
 
-                    <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-1">
-                      <input type="submit" class="btn btn-primary" name="registro" value="Registrar usuario" >
+                    <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-1" >
+                      <input type="submit" class="btn btn-primary"  name="registro" onclick="alertusersdelete(1)" value="Registrar usuario" >
                     </div>
 
 
@@ -98,13 +98,7 @@ require 'vistas/header.php';
 
 
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-  </script>
-  <script src="js/scripts.js"></script>
-</body>
 
-</html>   
 
 
 

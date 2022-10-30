@@ -79,8 +79,8 @@ require 'vistas/header.php';
                       </button>
                   
                             
-                            <a  href="borrar.php?id=<?php echo $fila['id']?>"  class="btn btn-danger btn-tb">Eliminar
-                                <i class="far fa-trash-alt"></i>
+                            <a  href="borrar.php?id=<?php echo $fila['id']?>"  class="btn btn-danger btn-tb eliminar">Eliminar
+                                <i class="far fa-trash-alt" ></i>
                             </a>
                         </td>
 
@@ -115,7 +115,7 @@ require 'vistas/header.php';
 
 
           
-          
+ <script src="js/function.js"></script>         
 
 
 <?php require 'vistas/footer.php';?>
