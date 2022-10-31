@@ -71,19 +71,69 @@ require 'vistas/header.php';
                             echo 'Administrador';
                             }else{
                             echo'Usuario normal';
-                            } ?></td>
+                            } ?></td class="container-btn-eliminar">
 
                         <td class="btn-accion">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editar<?php echo $fila['id']?>" data-whatever="@mdo"> 
                         <i class="fas fa-marker"></i> Editar
                       </button>
                   
+                      
+                      <a   href="borrar.php?id=<?php echo $fila['id']?>" id="jhon" class="btn btn-danger btn-tb">Eliminar
+                        <i class="far fa-trash-alt" ></i>
+                      </a>
+                      <a href="borrar.php?id=<?php echo $fila['id']?>" id="nel<?php echo $n?>" class="botoneliminar">eliminar</a>
+
+                      <script>
+                            document.querySelector("#nel<?php echo $n?>").addEventListener("click", evento => {
+                            // Prevenir sólo si el usuario dice que no
+
+                            evento.preventDefault()
+                            Swal.fire({
+                                title: "Venta #123465",
+                                text: "¿Eliminar?",
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonText: "Sí, eliminar",
+                                cancelButtonText: "Cancelar",
+                            })
+                            .then(resultado => {
+                                if (!resultado.value) {
+                                    // Hicieron click en "Sí"
+                                    evento.preventDefault()
+                                } else {
+                                    // Dijeron que no
+                                    Swal.fire(
+                                      'Good job!',
+                                      'You clicked the button!',
+                                      'success'
+                                        )
+                                }
+                            });
+
+
+
+
+
+
                             
-                            <a  href="borrar.php?id=<?php echo $fila['id']?>"  class="btn btn-danger btn-tb eliminar">Eliminar
-                                <i class="far fa-trash-alt" ></i>
-                            </a>
+                           /*  if (!confirm("¿Realmente quieres ir a mi sitio web?")) {
+                              evento.preventDefault()
+                            }else{
+                              Swal.fire(
+                                'Good job!',
+                                'You clicked the button!',
+                                'success'
+                                )
+                            } */
+
+                          })
+                           
+                      </script>
                         </td>
 
+
+                    
 
                     </tr>
                     
@@ -108,14 +158,6 @@ require 'vistas/header.php';
               </div>
             </div>
           </div>
-
-
-<!-- ventana modal -->
-
-
-
-          
- <script src="js/function.js"></script>         
 
 
 <?php require 'vistas/footer.php';?>

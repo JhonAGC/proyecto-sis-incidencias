@@ -73,7 +73,7 @@ require 'vistas/header.php';
                     </div>
 
                     <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-1" >
-                      <input type="submit" class="btn btn-primary"  name="registro" onclick="alertusersdelete(1)" value="Registrar usuario" >
+                      <input type="submit" class="btn btn-primary"   name="registro"  value="Registrar usuario" >
                     </div>
 
 
